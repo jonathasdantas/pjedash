@@ -1,0 +1,14 @@
+<div>
+	<md-input-container class="md-block">
+		<input ng-model="selectedValue" aria-label="setting.nome" ng-maxlength="{{ setting.tamanhoValor }}" type="number" ng-show="setting.tipoValor == 'INTEGER'" />
+	</md-input-container>
+	<div class="setting-file" ng-class="selectedFile.filename ? 'setting-file-active' : ''" ng-show="setting.tipoValor == 'FILE' || setting.tipoValor == 'IMAGE'">
+		<input id="logo_{{ index }}" class="ng-hide" name="logo_{{ index }}" type="file" ng-model="selectedFile" base-sixty-four-input />
+		<label for="logo_{{ index }}">
+			<md-icon md-font-set="fa fa-upload"></md-icon>
+			<span ng-hide="selectedFile.filename">Selecione o arquivo...</span>
+			<span ng-show="selectedFile.filename">{{ selectedFile.filename }}</span>
+		</label>
+		<img ng-show="selectedFile.filename" src='data:image/jpeg;base64, {{ selectedFile.base64 }}' />
+	</div>
+</div>

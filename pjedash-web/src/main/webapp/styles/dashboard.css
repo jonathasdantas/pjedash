@@ -1,0 +1,50 @@
+.widget .widget-title .md-body-1, .widget .widget-title .md-body-2 {
+    opacity: .5;
+}
+
+.widget .widget-title .md-subhead, .widget .widget-title .md-body-1, .widget .widget-title .md-body-2 {
+    margin: 0;
+}
+
+.widget .widget-content {
+	overflow: hidden;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.widget .scroll-x {
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+.widget .chart-container {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1;
+    -ms-flex: 1 1;
+    flex: 1 1;
+    width: 100%;
+    height: 100%;
+    
+    position: relative;
+    overflow: hidden;
+}
+
+.widget .widget-content table {
+	padding-right: 5px;
+}
+
+.full-size {
+	width: 100%!important;
+	height: 100%!important;
+}
+
+.hide {
+	display: none;
+}
+
+.chart-container {
+	text-align: center;
+	padding: 0px;
+}

@@ -1,0 +1,5 @@
+{
+  "directory": "webapp/bower_components",
+  "tjpeproxy": "proxy: 1:1@proxy.tjpe.local:8080",
+  "tjpeproxy": "https-proxy: 1:1@proxy.tjpe.local:8080"
+}

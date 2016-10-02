@@ -1,0 +1,13 @@
+.login_bg {
+	background-image: url(./../images/recife_bg.jpg);
+}
+
+.full-image-background {
+    background-size: cover;
+    background-position: center;
+}
+
+.login_bg img {
+	width: auto;
+	max-height: 200px;
+}

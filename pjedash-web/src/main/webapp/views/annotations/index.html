@@ -1,0 +1,39 @@
+<div layout="column" layout-margin ng-controller="AnnotationsCtrl as annotation">
+	<div layout-margin class="annotation-filter-container">
+		<md-content class="title-padding">
+			<md-toolbar md-theme="titleSecondary">
+				<div class="md-toolbar-tools">
+					<h3>
+						<span>Anota&#231;&#245;es</span>
+					</h3>
+				</div>
+			</md-toolbar>
+			
+			<div class="annotation-filter">
+				<md-input-container md-no-float>
+					<input ng-keyup="$event.keyCode == 13 && annotation.getAnnotationFromText(filterQuery)" ng-model="filterQuery" placeholder="Digite o termo para pesquisa em anotações">
+				</md-input-container>
+			</div>
+		</md-content>
+	</div>
+	
+	<div layout="column" layout-margin ng-show="annotationResult.length > 0">
+		<md-divider></md-divider>
+		<h4 id="annotation-search-result">Resultado da busca</h4>
+		<div class="no-item-select" flex ng-show="annotationResult.length < 1" layout="column" layout-align="center">
+			<h2>Nenhuma anota&#231;&#227;o encontrada</h2>
+		</div>
+		<div class="card-container" flex layout="row" layout-xs="column" layout-sm="column">
+			<annotation-card ng-repeat="annotation in annotationResult" search-term="{{ filterQuery }}" npu-processo="{{ annotation.npuProcesso }}" data="{{ annotation.data }}" dataalteracao="{{ annotation.dataUltimaAlteracao }}" texto="{{ annotation.texto }}" classe-processo="{{ annotation.classeProcesso }}"></annotation-card>
+		</div>		
+	</div>
+	
+	<div layout="column" layout-margin>
+		<md-divider></md-divider>
+		<h4>&#218;ltimas Anota&#231;&#245;es</h4>
+		<div class="card-container" flex layout="row" layout-xs="column" layout-sm="column">
+			<annotation-card ng-repeat="annotation in mostRecently" theme="secondary" npu-processo="{{ annotation.npuProcesso }}" data="{{ annotation.data }}" dataalteracao="{{ annotation.dataUltimaAlteracao }}" texto="{{ annotation.texto }}" classe-processo="{{ annotation.classeProcesso }}"></annotation-card>
+		</div>		
+	</div>
+	
+</div>

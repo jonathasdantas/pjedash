@@ -1,0 +1,27 @@
+<div class="widget widget-small md-whiteframe-z2" flex layout="column" content-layout="row" content-layout-align="space-between center">
+	<div class="widget-title" layout-padding layout="row" layout-align="space-between center" flex-order="1">
+		<md-menu>
+			<md-button aria-label="Opções" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+				<md-icon md-font-set="glyphicon glyphicon-option-vertical" class="menu-toggle"></md-icon>
+			</md-button>
+			<md-menu-content width="2">
+				<md-menu-item>
+					<md-button ng-click="showAlertDialog($event)">
+						<md-icon md-font-set="glyphicon glyphicon-alert" class="menu-toggle"></md-icon>
+						<span md-menu-align-target>Criar Alerta</span>
+					</md-button>
+				</md-menu-item>
+			</md-menu-content>
+    	</md-menu>
+    	<p class="truncate-clip md-display-3 font-weight-100 margin-top-0 margin-bottom-0">{{ value }}</p>
+   	</div>
+	<div class="widget-content widget-content-small" layout-padding layout="row" layout-align="space-between center" flex-order="2">
+		<div>
+			<md-icon class="font-size-5 opacity-50 margin-left-10 ng-isolate-scope md-indigo-theme md-font material-icons" md-font-icon="{{ icon }}">
+			</md-icon>
+		</div>
+		<div class="truncate-ellipsis" layout="column" layout-align="center end">
+			<span title="{{ label }}" class="md-body-2 opacity-60 margin-top-0 margin-bottom-0">{{ label }}</span>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,61 @@
+<md-dialog>
+	<form name="alertDialogForm">
+		<md-toolbar md-theme='titleSecondary'>
+			<div class="md-toolbar-tools">
+				<h2>Criar Alerta</h2>
+			</div>
+		</md-toolbar>
+		<md-dialog-content>
+			<div class="md-dialog-content alert-dialog">
+				<p>
+					Alertas s&#227;o importantes para que o gestor possa ser notificado caso algum valor refer&#234;ncia seja ultrapassado.
+				</p>
+				<md-divider></md-divider>
+				<h4>Vari&#225;vel</h4>
+				<p>{{ alert.alert.description }}</p>
+				<h4>Valor atual</h4>
+				<p>{{ alert.alert.value }}</p>
+		        <md-input-container class="md-block alert-input" flex>
+					<label>Descri&#231;&#227;o do Alerta</label>
+					<input required name="descricao" ng-model="alert.newAlert.descricao">
+					<div ng-messages="alertDialogForm.descricao.$error">
+						<div ng-message="required">Descri&#231;&#227;o obrigat&#243;ria.</div>
+					</div>
+				</md-input-container>
+				<fieldset>
+					<legend>Tipo do Alerta</legend>
+					<p>
+						O tipo do alerta indica se uma vari&#225;vel &#233; maior, menor ou igual a um determinado valor de refer&#234;ncia.
+					</p>
+			        <md-input-container class="md-block" flex>
+						<label>Tipo de Alerta</label>
+						<md-select required name="tipoAlerta" ng-model="alert.newAlert.tipoAlerta.id">
+							<md-option ng-repeat="alertType in alert.alertTypes" value="{{ alertType.id }}">
+								{{ alertType.descricao }}
+							</md-option>
+						</md-select>
+						<div ng-messages="alertDialogForm.tipoAlerta.$error">
+							<div ng-message="required">Tipo alerta obrigat&#243;rio.</div>
+						</div>
+					</md-input-container>
+					<md-input-container class="md-block alert-input" flex>
+						<label>Valor refer&#234;ncia</label>
+						<input required name="valorReferencia" ng-model="alert.newAlert.valorReferencia" type="number" step="0.01">
+						<div ng-messages="alertDialogForm.valorReferencia.$error">
+							<div ng-message="required">Valor refer&#234;ncia obrigat&#243;rio.</div>
+						</div>
+					</md-input-container>
+				</fieldset>
+			</div>
+		</md-dialog-content>
+		<md-dialog-actions layout="row">
+			<span flex></span>
+			<md-button ng-click="alert.closeDialog()">
+				Cancelar
+			</md-button>
+			<md-button ng-disabled="alertDialogForm.$invalid" type="submit" ng-click="alert.saveAlert()">
+				Salvar
+			</md-button>
+		</md-dialog-actions>
+	</form>
+</md-dialog>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>PJe Dash - Gestão à mão</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css" />
+    <link rel="stylesheet" href="bower_components/textAngular/dist/textAngular.css" />
+    <link rel="stylesheet" href="bower_components/angular-bootstrap-colorpicker/css/colorpicker.css" />
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/jqcloud2/dist/jqcloud.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/alert.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/aggregators.css">
+    <link rel="stylesheet" href="styles/menutoggle.css">
+    <link rel="stylesheet" href="styles/annotations.css">
+    <link rel="stylesheet" href="styles/tags.css">
+    <link rel="stylesheet" href="styles/settings.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="pjedash.app">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="full-height" layout="row" ui-view />
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       /*!function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');*/
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/Chart.js/Chart.js"></script>
+    <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/rangy/rangy-core.js"></script>
+    <script src="bower_components/rangy/rangy-classapplier.js"></script>
+    <script src="bower_components/rangy/rangy-highlighter.js"></script>
+    <script src="bower_components/rangy/rangy-selectionsaverestore.js"></script>
+    <script src="bower_components/rangy/rangy-serializer.js"></script>
+    <script src="bower_components/rangy/rangy-textrange.js"></script>
+    <script src="bower_components/textAngular/dist/textAngular.js"></script>
+    <script src="bower_components/textAngular/dist/textAngular-sanitize.js"></script>
+    <script src="bower_components/textAngular/dist/textAngularSetup.js"></script>
+    <script src="bower_components/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.js"></script>
+    <script src="bower_components/satellizer/dist/satellizer.js"></script>
+    <script src="bower_components/blob-polyfill/Blob.js"></script>
+    <script src="bower_components/file-saver.js/FileSaver.js"></script>
+    <script src="bower_components/angular-file-saver/dist/angular-file-saver.bundle.js"></script>
+    <script src="bower_components/jqcloud2/dist/jqcloud.js"></script>
+    <script src="bower_components/angular-jqcloud/angular-jqcloud.js"></script>
+    <script src="bower_components/angular-base64-upload/src/angular-base64-upload.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,webapp}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/app.constants.js"></script>
+        <script src="scripts/app.routers.js"></script>
+        <script src="scripts/app.configs.js"></script>
+        <script src="scripts/app.services.js"></script>
+        <script src="scripts/app.filters.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/dashboard.js"></script>
+        <script src="scripts/controllers/indicators.js"></script>
+        <script src="scripts/controllers/alerts.js"></script>
+        <script src="scripts/controllers/variables.js"></script>
+        <script src="scripts/controllers/aggregators.js"></script>
+        <script src="scripts/controllers/annotations.js"></script>
+        <script src="scripts/controllers/tags.js"></script>
+        <script src="scripts/controllers/menu.js"></script>
+        <script src="scripts/controllers/settings.js"></script>
+        <script src="scripts/directives/menutoggle/menutoggle.js"></script>
+        <script src="scripts/directives/menulink/menulink.js"></script>
+        <script src="scripts/directives/widget-small/widget-small.js"></script>
+        <script src="scripts/directives/widget/widget.js"></script>
+        <script src="scripts/directives/annotation-card/annotation-card.js"></script>
+        <script src="scripts/directives/setting-item/setting-item.js"></script>
+        <script src="scripts/directives/process-list/process-list.js"></script>
+        <script src="scripts/directives/serverError/serverError.js"></script>
+        <script src="scripts/services/menu.js"></script>
+        <script src="scripts/services/tags.js"></script>
+        <script src="scripts/services/alerts.js"></script>
+        <script src="scripts/services/annotations.js"></script>
+        <script src="scripts/services/indicators.js"></script>
+        <script src="scripts/services/variables.js"></script>
+        <script src="scripts/services/process.js"></script>
+        <script src="scripts/services/aggregators.js"></script>
+        <script src="scripts/services/processMoves.js"></script>
+        <script src="scripts/services/processParts.js"></script>
+        <script src="scripts/services/judgingBody.js"></script>
+        <script src="scripts/services/auth.js"></script>
+        <script src="scripts/services/settings.js"></script>
+        <script src="scripts/filters/npu.js"></script>
+        <script src="scripts/filters/highlight.js"></script>
+        <script src="scripts/filters/nospace.js"></script>
+        <script src="scripts/filters/makeRange.js"></script>
+        <script src="scripts/filters/humanizeDoc.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

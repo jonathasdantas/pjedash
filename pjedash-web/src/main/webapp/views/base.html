@@ -1,0 +1,86 @@
+<div id="main-content" layout="column" flex role="main">
+	<!-- Menu Lateral  -->
+	<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="menuLateral">
+		<md-toolbar class="md-tall md-hue-2 menu-header">
+			<div class="menu-header-text">
+				<h3>{{ currentUser.nome }}</h3>
+				<h4>{{ currentUser.papeis[0] }}</h4>
+				<h6>{{ currentUser.email }}</h6>
+			</div>
+		</md-toolbar>
+		<md-content ng-controller="MenuCtrl as menu">
+			<ul class="side-menu">
+				<li ng-repeat="section in menu.menu.sections" class="parent-list-item" ng-class="{'parentActive' : isSectionSelected(section)}">
+					<h2 class="menu-heading" ng-if="section.type === 'heading'" id="heading_{{ section.name | nospace }}">
+						{{ section }}
+					</h2>
+					<menu-link section="section" ng-if="section.type === 'link'"></menu-link>
+					<menu-toggle section="section" ng-if="section.type === 'toggle'"></menu-toggle>
+				</li>
+			</ul>
+		</md-content>
+	</md-sidenav>
+	<!-- Fim Menu Lateral -->
+
+	<md-toolbar class="main-toolbar">
+		<div class="md-toolbar-tools" ng-controller="MenuCtrl as menu">
+			<a ng-click="menu.toggleMenuLateral()">
+				<md-icon md-font-set="glyphicon glyphicon-menu-hamburger" class="menu-toggle"></md-icon>
+				<span ></span>
+			</a>
+			<span class="logo-header" flex>
+				<img ng-src="images/logo_white.png" alt="PJe Dash" src="images/logo_white.png">
+			</span>
+			<a class="notificationMenu" ng-click="menu.toggleMenuNotificacao()">
+				<md-icon md-font-set="glyphicon glyphicon glyphicon-bell"></md-icon>
+				<span class="alert-notification-number" ng-show="menu.notificationCount > 0">{{ menu.notificationCount }}</span>
+				<span>Alertas</span>
+			</a>
+		</div>
+	</md-toolbar>
+	
+	<md-content flex>
+		<!-- Container Principal  -->
+		<div class="base" ui-view></div>
+		<!-- Fim Container Principal  -->
+		
+		<!-- Footer -->
+		<md-toolbar md-theme="secondary" class="main-toolbar-footer">
+			<div class="md-toolbar-tools md-body-1 layout-align-space-between-center layout-row" layout="row" layout-align="space-between center">
+        		<h2>PJe Dash</h2>
+        		<h2>v1.0.0</h2>
+   			</div>
+		</md-toolbar>
+		<!-- Fim Footer -->
+	</md-content>
+	
+	<!-- Menu Alertas  -->
+	<md-sidenav layout="column" class="md-sidenav-right md-whiteframe-z2" md-component-id="menuNotificacao">
+		<md-toolbar md-theme="titleSecondary" class="md-hue-2">
+			<div class="md-toolbar-tools menu-notificao-header">
+				<md-icon md-font-set="glyphicon glyphicon glyphicon-bell"></md-icon>
+				<span>Alertas</span>
+				<span flex></span>
+			</div>
+		</md-toolbar>
+		<md-content ng-controller="MenuCtrl as menu">
+			<md-list class="notifications">
+				<md-list-item ng-show="menu.alertsHistory.length < 1">
+					<div class="md-list-item-text" layout="column">
+						<h5>Nenhuma notifica&#231;&#227;o para exibir.</h5>
+					</div>
+				</md-list-item>
+				<md-list-item ng-class="{'notification-not-displayed': alertHistory.visualizado == false}" ng-repeat="alertHistory in menu.alertsHistory" class="alert-notification-item">
+					<md-icon md-font-set="glyphicon glyphicon-asterisk"></md-icon>
+					<div class="md-list-item-text" layout="column">
+						<p>{{ alertHistory.variavelDescricao }}</p>
+						<p>{{ alertHistory.tipoAlerta.descricao }} {{ alertHistory.valorReferencia }}</p>
+						<span class="md-caption">{{ alertHistory.dataOcorrencia | date }}</span>
+					</div>
+					<md-divider></md-divider>
+				</md-list-item>
+			</md-list>
+		</md-content>
+	</md-sidenav>
+	<!-- Fim Menu Alertas  -->
+</div>

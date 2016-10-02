@@ -1,0 +1,67 @@
+<div flex>
+	<div class="list-filter">
+		<md-input-container md-no-float>
+			<input ng-model="filterQuery" placeholder="Digite o n&#250;mero ou a classe do processo">
+		</md-input-container>
+	</div>
+	<uib-accordion>
+		<uib-accordion-group is-open="processo.status.open" ng-repeat="processo in process | filter:filterQuery">
+			<uib-accordion-heading>
+				<div layout="row">
+					<md-button class="item-list-heading" ng-click="selectProcess(processo)">
+						<span class="bold">{{ processo.numero | npu }}</span>
+						<span class="vertical-divider">|</span>
+						<span>{{ processo.classe }}</span>
+					</md-button>
+					<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': processo.status.open, 'glyphicon-chevron-right': !processo.status.open}"></i>
+				</diV>
+			</uib-accordion-heading>
+			<div class="item-list-content">
+				<md-content>
+					<md-list flex>
+						<md-subheader class="md-no-sticky">Dados do Processo</md-subheader>
+						<md-list-item class="md-2-line" >
+							<div class="md-list-item-text" layout="column">
+								<h4>NPU</h4>
+								<p>{{ processo.numero | npu }}</p>
+							</div>
+						</md-list-item>
+						<md-list-item class="md-2-line" >
+							<div class="md-list-item-text" layout="column">
+								<h4>Classe</h4>
+								<p>{{ processo.classe }}</p>
+							</div>
+						</md-list-item>
+						<md-list-item class="md-2-line" >
+							<div class="md-list-item-text" layout="column">
+								<h4>Valor da Causa</h4>
+								<p>{{ processo.valorCausa | currency }}</p>
+							</div>
+						</md-list-item>
+						<md-list-item class="md-2-line" >
+							<div class="md-list-item-text" layout="column">
+								<h4>Data de Distribui&#231;&#227;o</h4>
+								<p>{{ processo.dataDistribuicao | date: 'dd/MM/yyyy HH:mm:ss' }}</p>
+							</div>
+						</md-list-item>
+						<md-divider></md-divider>
+						<md-subheader class="md-no-sticky">Partes do Processo</md-subheader>
+						<md-list-item class="md-2-line" ng-repeat="parte in processo.partes">
+							<div class="md-list-item-text" layout="column">
+								<h4>{{ parte.nome }}</h4>
+								<p>{{ parte.polo }}</p>
+							</div>
+						</md-list-item>
+						<md-subheader class="md-no-sticky">&#218;ltimos Movimentos do Processo</md-subheader>
+						<md-list-item class="md-2-line" ng-repeat="movimento in processo.movimentos">
+							<div class="md-list-item-text" layout="column">
+								<h4>{{ movimento.tipo }} | {{ movimento.texto }}</h4>
+								<p>{{ movimento.data | date: 'dd/MM/yyyy HH:mm:ss' }}</p>
+							</div>
+						</md-list-item>
+					</md-list>
+				</md-content>
+			</div>
+		</uib-accordion-group>
+	</uib-accordion>
+</div>

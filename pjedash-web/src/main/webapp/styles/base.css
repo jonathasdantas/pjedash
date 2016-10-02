@@ -1,0 +1,248 @@
+body {
+  padding: 0;
+}
+.margin-0 {
+	margin: 0;
+}
+
+.margin-bottom-10 {
+	margin-bottom: 10px;
+}
+
+.margin-bottom-0 {
+	margin-bottom: 0;
+}
+
+.padding-bottom-20 {
+	padding-bottom: 20px!important;
+}
+
+.margin-top-0 {
+	margin-top: 0;
+}
+
+.font-size-5 {
+    font-size: 5rem!important;
+    min-width: 1em;
+    line-height: 1;
+}
+
+.base {
+  overflow: auto;
+  overflow-x: hidden;
+  padding: 16px 24px;
+  display: block;
+  position: relative;
+  padding-bottom: 65px;
+  min-height: calc(100vh - 64px);
+  -webkit-backface-visibility: hidden;
+}
+
+.main-toolbar {
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.45);
+    z-index: 4;
+}
+
+.main-toolbar-footer {
+    box-shadow: 0 -2px 6px 0 rgba(0,0,0,.25);
+}
+
+.full-width {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.full-height {
+    height: 100%;
+}
+
+#main-content {
+    overflow: hidden;
+    position: relative;
+}
+
+.base:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.1);
+}
+
+.vertical-divider {
+	margin: 0 15px;
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 24px;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.table>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #f2f2f2;
+}
+.table>thead>tr>th {
+    padding: 8px;
+    line-height: 24px;
+    border-top: 1px solid #f2f2f2;
+}
+
+.widget {
+    position: relative;
+    background-size: cover;
+    background-color: #fff;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    min-height: 100px;
+}
+
+.widget-small {
+	color: #FFF;
+	max-height: 160px!important;
+}
+
+.widget-small md-icon {
+	margin-bottom: 25px;
+}
+
+.aqua {
+	background-color: #00c0ef!important;
+}
+
+.green {
+	background-color: #00a65a!important;
+}
+
+.yellow {
+	background-color: #f39c12!important;
+}
+
+.red {
+	background-color: #dd4b39!important;
+}
+
+.logo-header img {
+	width: auto;
+	height: 25px;
+}
+
+.truncate-clip {
+	overflow: hidden;
+	text-overflow: clip;
+}
+
+.truncate-ellipsis {
+	display: table;
+    table-layout: fixed;
+    width: 80%;
+    white-space: nowrap;
+}
+
+.truncate-ellipsis > * {
+    display: table-cell;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: right;
+}
+
+.title-padding {
+	padding: 10px;
+}
+
+/* Menu Alertas */
+.notificationMenu {
+	cursor: pointer;
+}
+
+.notificationMenu md-icon {
+	margin-right: 0px;
+}
+
+.notificationMenu span {
+	font-size: 18px;
+}
+
+.menu-notificacao-header {
+	font-size: 20px;
+	color: #FFF!important;
+}
+
+.menu-notificacao-header md-icon {
+	color: #FFF!important;
+}
+
+.notifications md-list-item md-icon {
+	margin-right: 10px!important;
+}
+
+.notifications md-list-item {
+    padding: 10px 10px;
+}
+
+.notifications .notification-not-displayed {
+	background-color: rgba(216, 67, 21, 0.12);
+}
+
+.notifications md-list-item div p {
+    white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-right: 10px;
+	
+	margin-bottom: 0px;
+}
+
+.notifications md-list-item div {
+    width: 90%;
+}
+
+.notifications md-list-item span {
+	color: #BBB;
+}
+
+.menu-notificao-header {
+	cursor: default;
+}
+
+.menu-notificao-header md-icon {
+	margin-right: 5px;
+}
+
+.alert-notification-number {
+	background-color: rgb(255,87,34);
+	
+	text-align: center;
+    font-weight: bold;
+    font-size: 14px!important;
+	
+	display: block;
+	position: absolute;
+	height: 20px;
+    width: 20px;
+    right: 75px;
+    top: 15px;
+	line-height: 2rem;
+	border-radius: 50%;
+}
+
+.list-filter md-input-container {
+	width: 100%;
+	padding: 0;
+	margin: 15px 0 0 0;
+}
+
+.list-filter md-input-container .md-errors-spacer {
+	min-height: 15px;
+}
+
+.light-gray {
+	background-color: #E0E0E0!important;
+	color: #000!important;
+}

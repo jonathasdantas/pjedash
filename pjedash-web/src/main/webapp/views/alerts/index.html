@@ -1,0 +1,103 @@
+<div layout="column" class="full-height alerts" ng-controller="AlertsCtrl as alert" ui-view>
+	<div layout="row" layout-sm="column" layout-margin>
+		<div class="widget md-whiteframe-z2" flex="" layout="column" content-layout="row" content-layout-align="space-between center">
+			<div layout-xs="column" layout-sm="column" layout="row" flex class="full-height">
+				<div class="alert-list title-padding" layout="column" flex="100">
+					<md-toolbar class="margin-bottom-10" md-theme="titleSecondary">
+						<div class="md-toolbar-tools">
+							<h3>
+								<span>Notifica&#231;&#245;es</span>
+							</h3>
+						</div>
+					</md-toolbar>
+					<md-content>
+						<md-toolbar md-theme="secondary">
+							<div class="md-toolbar-tools">
+								<h3>
+									<span>Hoje</span>
+								</h3>
+							</div>
+						</md-toolbar>
+						<md-list class="notifications-list" flex>
+							<md-list-item ng-show="alert.alertsHistory.today.length < 1">
+								<div class="md-list-item-text" layout="column">
+									<h4>Nenhuma notifica&#231;&#227;o para hoje.</h4>
+								</div>
+							</md-list-item>
+							<md-list-item class="md-3-line" ng-repeat="alertHistory in alert.alertsHistory.today">
+								<md-icon md-font-set="glyphicon glyphicon-asterisk"></md-icon>
+								<div class="md-list-item-text" layout="column">
+									<h3>{{ alertHistory.variavelDescricao }}</h3>
+									<h4><strong>Condi&#231;&#227;o:</strong> {{ alertHistory.tipoAlerta.descricao }} {{ alertHistory.valorReferencia }}</h4>
+									<h4><strong>Identificado:</strong> {{ alertHistory.valorApurado }}</h4>
+									<p>{{ alertHistory.dataOcorrencia | date }}</p>
+								</div>
+								<md-divider></md-divider>
+							</md-list-item>
+						</md-list>
+					</md-content>
+					<md-content>
+						<md-toolbar md-theme="secondary">
+							<div class="md-toolbar-tools">
+								<h3>
+									<span>Anteriores</span>
+								</h3>
+							</div>
+						</md-toolbar>
+						<md-list class="notifications-list" flex>
+							<md-list-item ng-show="alert.alertsHistory.past.length < 1">
+								<div class="md-list-item-text" layout="column">
+									<h4>Nenhuma notifica&#231;&#227;o passada.</h4>
+								</div>
+							</md-list-item>
+							<md-list-item class="md-3-line" ng-repeat="alertHistory in alert.alertsHistory.past">
+								<md-icon md-font-set="glyphicon glyphicon-asterisk"></md-icon>
+								<div class="md-list-item-text" layout="column">
+									<h3>{{ alertHistory.variavelDescricao }}</h3>
+									<h4><strong>Condi&#231;&#227;o:</strong> {{ alertHistory.tipoAlerta.descricao }} {{ alertHistory.valorReferencia }}</h4>
+									<h4><strong>Identificado:</strong> {{ alertHistory.valorApurado }}</h4>
+									<p>{{ alertHistory.dataOcorrencia | date }}</p>
+								</div>
+								<md-divider></md-divider>
+							</md-list-item>
+						</md-list>
+					</md-content>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div layout="row" layout-sm="column" layout-margin>
+		<div class="widget md-whiteframe-z2" flex="" layout="column" content-layout="row" content-layout-align="space-between center">
+			<div layout-xs="column" layout-sm="column" layout="row" flex class="full-height">
+				<div class="alert-list title-padding" layout="column" flex="100">
+					<md-toolbar md-theme="title">
+						<div class="md-toolbar-tools">
+							<h3>
+								<span>Alertas</span>
+							</h3>
+						</div>
+					</md-toolbar>
+					<md-list flex class="alerts-list">
+						<md-list-item ng-show="alert.alerts.length < 1">
+							<div class="md-list-item-text" layout="column">
+								<h4>Nenhum alerta cadastrado.</h4>
+							</div>
+						</md-list-item>
+						<md-list-item class="md-3-line" ng-repeat="alertItem in alert.alerts">
+							<md-icon md-font-set="glyphicon glyphicon-bell"></md-icon>
+							<div flex class="md-list-item-text" layout="column">
+								<h3>{{ alertItem.variavelDescricao }}</h3>
+								<h4>{{ alertItem.tipoAlerta.descricao }} {{ alertItem.valorReferencia }}</h4>
+								<p>{{ alertItem.descricao }}</p>
+							</div>
+							<md-button aria-label="Remover Alerta" ng-click="alert.removeAlert(alertItem.id)" alt="Remover alerta" title="Remover alerta">
+								<md-icon md-font-set="glyphicon glyphicon-trash"></md-icon>
+							</md-button>
+							<md-divider></md-divider>
+						</md-list-item>
+					</md-list>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

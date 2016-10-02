@@ -1,0 +1,200 @@
+.menu-toggle {
+  margin-right: 10px;
+}
+
+@media only screen and (min-width: 561px) {
+  #page-wrapper.open {
+    padding-left: 300px;
+  }
+}
+@media only screen and (max-width: 560px) {
+  #page-wrapper.open {
+    padding-left: 70px;
+  }
+}
+#page-wrapper.open #sidebar-wrapper {
+  left: 150px;
+}
+
+@media only screen and (max-width: 560px) {
+  body.hamburg #page-wrapper {
+    padding-left: 0;
+  }
+  body.hamburg #page-wrapper:not(.open) #sidebar-wrapper {
+    position: absolute;
+    left: -100px;
+  }
+  body.hamburg #page-wrapper:not(.open) ul.sidebar .sidebar-title.separator {
+    display: none;
+  }
+  body.hamburg #page-wrapper.open #sidebar-wrapper {
+    position: fixed;
+  }
+  body.hamburg #page-wrapper.open #sidebar-wrapper ul.sidebar li.sidebar-main {
+    margin-left: 0px;
+  }
+  body.hamburg #sidebar-wrapper ul.sidebar li.sidebar-main,
+  body.hamburg .row.header .meta {
+    margin-left: 70px;
+  }
+  body.hamburg #sidebar-wrapper ul.sidebar li.sidebar-main,
+  body.hamburg #page-wrapper.open #sidebar-wrapper ul.sidebar li.sidebar-main {
+    transition: margin-left 0.4s ease 0s;
+  }
+}
+
+#page-wrapper {
+  padding-left: 70px;
+  height: 100%;
+}
+#sidebar-wrapper {
+  margin-left: -150px;
+  left: -80px;
+  width: 300px;
+  position: fixed;
+  height: 100%;
+  z-index: 999;
+}
+#page-wrapper,
+#sidebar-wrapper {
+  transition: all .4s ease 0s;
+}
+
+#sidebar-wrapper {
+  background: #30426a;
+}
+ul.sidebar .sidebar-main a,
+.sidebar-footer,
+ul.sidebar .sidebar-list a:hover,
+#page-wrapper:not(.open) ul.sidebar .sidebar-title.separator {
+  /* Sidebar header and footer color */
+  background: #2d3e63;
+}
+ul.sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-indent: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+ul.sidebar li a {
+  color: #fff;
+  display: block;
+  float: left;
+  text-decoration: none;
+  width: 300px;
+}
+ul.sidebar .sidebar-main {
+  height: 128px;
+}
+ul.sidebar .sidebar-main a {
+  font-size: 18px;
+  line-height: 60px;
+}
+ul.sidebar .sidebar-main a:hover {
+  cursor: pointer;
+}
+ul.sidebar .sidebar-main .menu-icon {
+  float: right;
+  font-size: 24px;
+  padding-right: 28px;
+  line-height: 63px;
+}
+ul.sidebar .sidebar-title {
+  color: #738bc0;
+  font-size: 12px;
+  height: 35px;
+  line-height: 40px;
+  text-transform: uppercase;
+  transition: all .6s ease 0s;
+}
+ul.sidebar .sidebar-list {
+  height: 40px;
+}
+ul.sidebar .sidebar-list a {
+  text-indent: 25px;
+  font-size: 15px;
+  color: #b2bfdc;
+  line-height: 40px;
+}
+ul.sidebar .sidebar-list a:hover {
+  color: #fff;
+  border-left: 3px solid #e99d1a;
+  text-indent: 22px;
+}
+ul.sidebar .sidebar-list a:hover .menu-icon {
+  text-indent: 25px;
+}
+ul.sidebar .sidebar-list .menu-icon {
+  float: right;
+  padding-right: 29px;
+  line-height: 40px;
+  width: 70px;
+}
+#page-wrapper:not(.open) ul.sidebar {
+  bottom: 0;
+}
+#page-wrapper:not(.open) ul.sidebar .sidebar-title {
+  display: none;
+  height: 0px;
+  text-indent: -100px;
+}
+
+#page-wrapper:not(.open) ul.sidebar .sidebar-toolbar {
+  display: none;
+  height: 0px;
+  text-indent: -100px;
+}
+
+#page-wrapper:not(.open) ul.sidebar .sidebar-title.separator {
+  display: block;
+  height: 2px;
+  margin: 13px 0;
+}
+#page-wrapper:not(.open) ul.sidebar .sidebar-list a:hover span {
+  border-left: 3px solid #e99d1a;
+  text-indent: 22px;
+}
+#page-wrapper:not(.open) .sidebar-footer {
+  display: none;
+}
+
+#page-wrapper:not(.open) .sidebar-toolbar {
+  display: none;
+}
+
+#page-wrapper:not(.open) .menu-toggle {
+  display: none; 
+}
+
+#page-wrapper.open .menu-toggle-sidebar {
+  display: none; 
+}
+
+#page-wrapper:not(.open) ul.sidebar .sidebar-main {
+  height: 64px;
+}
+
+.sidebar-footer {
+  position: absolute;
+  height: 40px;
+  bottom: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  transition: all .6s ease 0s;
+  text-align: center;
+}
+.sidebar-footer div a {
+  color: #b2bfdc;
+  font-size: 12px;
+  line-height: 43px;
+}
+.sidebar-footer div a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}

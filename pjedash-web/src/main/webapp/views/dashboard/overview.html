@@ -1,0 +1,13 @@
+<div layout="row" layout-sm="column" layout-xs="column" layout-margin>
+	<widget-small ng-repeat="variable in dash.variables" icon="glyphicon glyphicon-tasks" color='{{ variable.cor }}' label="{{ variable.descricao }}" value="{{ variable.indice }}" initials="{{ variable.sigla }}" id="{{ variable.id }}" />
+</div>
+
+<div layout="row" layout-sm="column" layout-xs="column" layout-margin>
+	<widget type="chart" chart="dash.chart1" title="{{ dash.chart1Title }}" subtitle="{{ dash.chart1SubTitle }}"></widget>
+	<widget type="table" table="dash.table1" title="{{ dash.chart1Title }}" subtitle="{{ dash.chart1SubTitle }}"></widget>
+</div>
+
+<div layout="row" layout-sm="column" layout-xs="column" layout-margin>
+	<widget type="chart" chart="dash.chart2" title="{{ dash.chart2Title }}" subtitle="{{ dash.chart2SubTitle }}"></widget>
+	<widget type="table" table="dash.table2" title="{{ dash.chart2Title }}" subtitle="{{ dash.table2SubTitle }}"></widget>
+</div>

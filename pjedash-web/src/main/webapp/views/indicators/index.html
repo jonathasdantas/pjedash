@@ -1,0 +1,23 @@
+<div layout="row" layout-sm="column" layout-xs="column" layout-margin>
+	<md-toolbar md-theme="title">
+		<div class="md-toolbar-tools">
+			<h3>
+				<span>{{ indicatorTitle }}</span>
+			</h3>
+		</div>
+	</md-toolbar>
+</div>
+<div layout="row" layout-sm="column" layout-xs="column" layout-margin style="background-color: #FFF">
+	<md-input-container class="md-block" flex-gt-sm>
+		<label>Ano</label>
+		<md-select ng-model="selectedYear">
+			<md-option ng-repeat="year in [years[0], years[1]] | makeRange" value="{{year}}">
+				{{year}}
+			</md-option>
+		</md-select>
+	</md-input-container>
+</div>
+<div layout="row" layout-sm="column" layout-xs="column" layout-margin>
+	<widget type="chart" chart="chart" title="Gr&#225;fico Comparativo" subtitle=""></widget>
+	<widget type="table" table="table" title="Tabela de Valores" subtitle=""></widget>
+</div>

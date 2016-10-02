@@ -1,0 +1,32 @@
+.alert-dialog .alert-input {
+	margin-top: 30px;
+	margin-bottom: 0px;
+}
+
+.alert-dialog fieldset legend {
+	margin-bottom: 15px;
+}
+
+.alert-dialog p {
+	margin-bottom: 30px;
+}
+
+.notifications-list {
+	max-height: 500px;
+	overflow-y: auto;
+	overflow-x: hidden;  
+}
+
+.notifications-list md-list-item {
+	padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.alerts-list {
+	padding-bottom: 0px;
+}
+
+.alerts-list md-list-item {
+	padding-left: 20px!important;
+    padding-top: 10px!important;
+    padding-bottom: 10px!important;

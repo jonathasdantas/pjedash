@@ -1,0 +1,31 @@
+<div layout="column" layout-margin ng-controller="TagsCtrl as tag">
+	<div layout-margin class="annotation-filter-container">
+		<md-content class="title-padding">
+			<md-toolbar md-theme="titleSecondary">
+				<div class="md-toolbar-tools">
+					<h3>
+						<span>Tags</span>
+					</h3>
+				</div>
+			</md-toolbar>
+			
+			
+			
+			<div class="tag-cloud">
+				<jqcloud words="tag.tags" colors="tag.colors" autoResize="true" steps="tag.totalHits"></jqcloud>
+			</div>
+		</md-content>
+	</div>
+	
+	<div layout="column" layout-margin>
+		<md-content class="title-padding padding-bottom-20">
+			<h4 id="annotation-search-result">Processos Associados</h4>
+			<div class="no-item-select" flex ng-hide="processesResult.length > 0" layout="column" layout-align="center">
+				<h2>Nenhuma tag selecionada</h2>
+			</div>
+			<div class="card-container" flex ng-show="processesResult.length > 0" layout="row" layout-xs="column" layout-sm="column">
+				<process-list process="processesResult" callback="selectProcess(processo)"></process-list>
+			</div>
+		</md-content>
+	</div>
+</div>

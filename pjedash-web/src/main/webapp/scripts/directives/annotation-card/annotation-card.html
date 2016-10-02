@@ -1,0 +1,14 @@
+<md-card flex>
+	<md-card-title class="annotation-title md-whiteframe-z2">
+		<md-card-title-text>
+			<span class="md-title">{{ npuProcesso | npu }}</span>
+			<span>{{ classeProcesso }}</span>
+		</md-card-title-text>
+	</md-card-title>
+	<md-card-content class="annotation-content">
+		<p ng-bind-html="texto | highlight:searchTerm"></p>
+	</md-card-content>
+	<md-card-footer class="annotation-footer">
+		&#218;ltima Modifica&#231;&#227;o: {{ dataalteracao | date : 'dd/MM/yyyy HH:mm:ss' }}
+	</md-card-footer>
+</md-card>

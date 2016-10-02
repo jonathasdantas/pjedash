@@ -1,0 +1,79 @@
+<div layout="row" layout-sm="column" layout-margin>
+	<div class="widget md-whiteframe-z2" flex="" layout="column" content-layout="row" content-layout-align="space-between center">
+		<div layout-xs="column" layout-sm="column" layout="row" flex class="full-height">
+			<div class="aggregator-list" layout="column" flex="100" flex-gt-sm="60" flex-gt-md="50" flex-gt-lg="40">
+				<md-toolbar md-theme="title">
+					<div class="md-toolbar-tools">
+						<h3>
+							<span>Processos {{ currentAggregator }} h&#225; mais de {{ daysAmount }} dia(s)</span>
+						</h3>
+					</div>
+				</md-toolbar>
+				
+				<process-list process="processos" callback="selectProcesso(processo)"></process-list>
+				
+				<div class="no-item-select" flex ng-hide="processos.length > 0" layout="column" layout-align="center">
+					<h2>N&#227;o foi encontrado nenhum processo para o agrupador</h2>
+				</div>
+			</div>
+			<div layout="column" layout-align="start center" class="aggregator-annotation-tag-container animate-show" flex>
+				<div class="no-item-select" flex ng-hide="currentProcesso.status.open" layout="column" layout-align="center">
+					<h2>Selecione um processo</h2>
+				</div>
+				<div layout="column" class="aggregator-annotation" ng-show="currentProcesso.status.open">
+					<md-toolbar md-theme="title">
+						<div class="md-toolbar-tools">
+							<h3>
+								<span>Anota&#231;&#245;es</span>
+							</h3>
+						</div>
+					</md-toolbar>
+					<div layout="row" class="annotation-last-sync">
+						<span ng-show="currentProcesso.anotacao.dataUltimaAlteracao">&#218;ltima sincroniza&#231;&#227;o: {{ currentProcesso.anotacao.dataUltimaAlteracao | date : 'dd/MM/yyyy HH:mm:ss' }}</span>
+					</div>
+					<div layout="row">
+						<text-angular class="annotation-text-area" placeholder="Escreva uma anota&#231;&#227;o para o processo" name="annotation" ta-target-toolbars="editor-toolbar" ng-model="currentProcesso.anotacao.texto"></text-angular>
+					</div>
+					<div layout="row">
+						<text-angular-toolbar ta-toolbar="[['bold','italics','underline','strikeThrough'],['justifyLeft','justifyCenter','justifyRight','justifyFull'],['ul','ol','insertLink']]" name="editor-toolbar" class="email-dialog-editor-toolbar" ta-toolbar-active-button-class="active"></text-angular-toolbar>
+					</div>
+				</div>
+				<div layout="column" class="aggregator-tags" ng-show="currentProcesso.status.open">
+					<md-toolbar md-theme="title">
+						<div class="md-toolbar-tools">
+							<h3>
+								<span>Tags</span>
+							</h3>
+						</div>
+					</md-toolbar>
+					<div layout="row">
+						<md-chips md-on-remove="removeTag($chip)" md-on-select="setCurrentSelectedTag($chip)" md-autocomplete-snap class="aggregator-tags-chips" ng-model="currentProcesso.tags" md-transform-chip="newTag($chip)">
+							<md-autocomplete
+								md-selected-item="currentTag"
+								md-search-text="tagQuery"
+								md-items="tag in searchUserTags(tagQuery)"
+								md-item-text="tag.descricao"
+								md-no-cache="true"
+								placeholder="Adicione uma tag" >
+								<span md-highlight-text="tagQuery">
+									{{tag.descricao}}
+								</span>
+							</md-autocomplete>
+							<md-chip-template class="tag-template">
+								<div colorpicker colorpicker-close-on-select ng-model="$chip.cor" class="tag-color" style="background-color: {{ $chip.cor }}"></div>
+								<div class="tag-name">
+									<span>
+										<strong>{{$chip.descricao}}</strong>
+									</span>
+								</div>
+							</md-chip-template>
+							<button md-chip-remove class="md-primary">
+								<md-icon md-svg-icon="md-close"></md-icon>
+							</button>
+						</md-chips>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

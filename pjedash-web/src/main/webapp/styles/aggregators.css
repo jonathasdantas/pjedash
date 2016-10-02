@@ -1,0 +1,210 @@
+.item-list-heading {
+	width: 100%;
+	text-align: left;
+	max-height: 35px;
+	
+	text-overflow: ellipsis;
+}
+
+.panel-title a:hover {
+	text-decoration: none;
+}
+
+.panel-title a:hover i {
+	color: rgb(0, 150, 136);
+}
+
+.accordion-toggle i {
+	top: 15px;
+}
+
+.item-list-content {
+	
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.panel-heading {
+	padding: 0 15px 0 0!important;
+	background-color: #DADADA!important;
+}
+
+.panel {
+	border: 0!important;
+}
+
+.panel-body {
+	border-top-color: #D2D2D2!important;
+	background-color: #E4E4E4!important;
+}
+
+.panel-group {
+	margin-bottom: 0px!important;
+}
+
+.aggregator-list {
+	padding: 10px;
+	border-right: 1px solid #E2E2E2;
+}
+
+.aggregator-list-filter md-input-container {
+	width: 100%;
+	padding: 0;
+	margin: 15px 0 0 0;
+}
+
+.aggregator-list-filter md-input-container .md-errors-spacer {
+	min-height: 15px;
+}
+
+.aggregator-annotation {
+	width: 100%;
+}
+
+.annotation-text-area {
+	width: 100%;
+	margin: 0px 0px 15px;
+}
+
+.annotation-text-area .ta-editor {
+	max-height: 400px;
+}
+
+.annotation-last-sync {
+	font-size: 12px;
+	text-align: right;
+	display:block;
+	margin-top: 15px;
+	color: #CCC;
+}
+
+.animate-show {
+	opacity: 1;
+}
+
+.animate-show.ng-hide-add, .animate-show.ng-hide-remove {
+  -webkit-transition: all 0.75s ease;
+  -moz-transition: all 0.75s ease;
+  -o-transition: all 0.75s ease;
+  -ms-transition: all 0.75s ease;
+  transition: all 0.75s ease;
+}
+
+.animate-show.ng-hide {
+	opacity: 0;
+	margin-right: -3000px;
+}
+
+/** TAGS **/
+.aggregator-tags {
+	margin-top: 15px;
+	width: 100%;
+}
+
+.aggregator-annotation-tag-container {
+	padding: 15px;
+	min-height: 400px!important;
+}
+
+.no-item-select h2 {
+	font-size: 22px;
+	
+	opacity: .4;
+	text-align: center;
+	
+	cursor: default;
+	
+	margin: 75px 0px;
+}
+
+.aggregator-tags .aggregator-tags-chips {
+	margin-top: 15px;
+	width: 100%;
+}
+
+.aggregator-tags .aggregator-tags-chips .md-chip .md-chip-content md-chip-template {
+	display: block;
+}
+
+.aggregator-tags .aggregator-tags-chips .md-chip .md-chip-content md-chip-template .tag-color {
+	width: 24px;
+	height: 24px;
+	background-color: #CCC;
+	border-radius: 30px;
+	position: relative;
+	float: left;
+	top: 4px;
+    left: 4px;
+}
+
+.aggregator-tags .aggregator-tags-chips .md-chip .md-chip-content md-chip-template .tag-name {
+	padding-left: 35px;
+}
+
+.aggregator-tags .aggregator-tags-chips .md-chip {
+	position: relative;
+	padding-left: 0;
+}
+
+.aggregator-tags .aggregator-tags-chips .md-chip .md-chip-remove-container {
+	position: absolute;
+	right: 4px;
+	top: 4px;
+	margin-right: 0;
+	height: 24px;
+}
+
+.aggregator-tags .aggregator-tags-chips .md-chip .md-chip-remove-container button {
+      position: relative;
+      height: 24px;
+      width: 24px;
+      line-height: 30px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 50%;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      margin: 0;
+      transition: background 0.15s linear;
+      display: block;
+}
+
+.aggregator-tags .aggregator-tags-chips .md-chip .md-chip-remove-container button md-icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0) scale(0.7);
+	color: white;
+	fill: white;
+}
+
+.aggregator-tags .aggregator-tags-chips .md-chip .md-chip-remove-container button:hover, .aggregator-tags .aggregator-tags-chips .md-chip .md-chip-remove-container button:focus {
+	background: rgba(255, 0, 0, 0.8);
+}
+
+.aggregator-tags .aggregator-tags-chips .md-chip:not(.md-readonly) md-chip-template {
+	padding-right: 5px;
+}
+
+.md-list-item-text {
+	margin: 0px auto!important;
+}
+
+md-list-item {
+	min-height: 60px!important;
+}
+
+.md-subheader {
+    color: rgba(0,0,0,0.70);
+    background-color: rgb(228,228,228);
+    font-size: 18px!important;
+    font-weight: bold!important;
+    margin-bottom: 10px;
+}
+
+md-list {
+	padding-top: 0px!important;
+}

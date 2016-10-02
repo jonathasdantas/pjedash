@@ -1,0 +1,50 @@
+<div class="widget md-whiteframe-z2" layout="column" flex content-layout="row">
+	<div class="widget-title" layout-padding layout="row" layout-align="space-between center" flex-order="1">
+		<div flex layout="column">
+            <h3 class="md-subhead">{{ title }}</h3>
+            <p class="md-body-1">{{ subtitle }}</p>
+        </div>
+        <md-menu>
+			<md-button aria-label="Opções" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+				<md-icon md-font-set="glyphicon glyphicon-option-vertical" class="menu-toggle"></md-icon>
+			</md-button>
+			<md-menu-content width="2">
+				<md-menu-item>
+					<md-button ng-click="exportarImagem()" ng-show="type == 'chart'">
+						<md-icon md-font-set="glyphicon glyphicon-picture" class="menu-toggle"></md-icon>
+						<span md-menu-align-target>Exportar Imagem</span>
+					</md-button>
+					<md-button ng-click="exportarExcel()" ng-show="type == 'table'">
+						<md-icon md-font-set="glyphicon glyphicon-export" class="menu-toggle"></md-icon>
+						<span md-menu-align-target>Exportar Excel</span>
+					</md-button>
+				</md-menu-item>
+				<!-- <md-menu-item>
+					<md-button ng-click="">
+						<md-icon md-font-set="glyphicon glyphicon-alert" class="menu-toggle"></md-icon>
+						<span md-menu-align-target>Criar Alerta</span>
+					</md-button>
+				</md-menu-item> -->
+			</md-menu-content>
+    	</md-menu>
+	</div>
+	<div class="widget-content" ng-class="{'scroll-x': type == 'table'}" layout-padding layout="row" flex-order="2">
+		<canvas ng-show="type == 'chart'" class="chart" chart-colours="colors" chart-series="chart.series" chart-data="chart.data" chart-labels="chart.labels"></canvas>
+		<table ng-show="type == 'table'" class="table">
+			<thead>
+				<tr>
+					<th ng-repeat="label in table.labels track by $index">
+						{{ label }}
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="row in table.data track by $index">
+					<td ng-repeat="cell in row track by $index">
+						{{ cell }}
+					</td>
+				</tr>
+			</tbody>
+		</table> 
+	</div>
+</div>
